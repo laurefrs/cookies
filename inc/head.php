@@ -36,20 +36,20 @@ session_start();?>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php">Chocolates chips</a></li>
-          <li><a href="index.php">Nuts</a></li>
-          <li><a href="index.php">Gluten full</a></li>
+          <li><a href="/index.php">Chocolates chips</a></li>
+          <li><a href="/index.php">Nuts</a></li>
+          <li><a href="/index.php">Gluten full</a></li>
             <?php
             if (empty($_SESSION['login'])) {
                 echo '<li><a href="login.php">Se connecter</a></li>';}
              else {
-                 echo '<li><a href="logout.php">Se déconnecter</a></li>';}?>
+                 echo '<li><a href="logout.php">Se déconnecter</a></li>';}
 
-            <a href="/cart.php" class="btn btn-warning navbar-btn">
+                if (isset($_SESSION['login'])) { echo
+            '<li><a href="/cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Cart
-            </a>
-          </li>
+            </a></li>';} ?>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
