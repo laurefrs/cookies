@@ -2,7 +2,7 @@
 
 require 'inc/head.php';
 
-$cookies = [58, 49, 46, 32];
+$cookies = [58, 46, 36, 32];
 if (isset($_GET['add_to_cart'])) {
     if (in_array($_GET['add_to_cart'], $cookies)) {
         $addCookies = $_GET['add_to_cart'];

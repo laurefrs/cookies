@@ -1,17 +1,20 @@
 <?php require 'inc/head.php';
 
-$cookies = [58, 49, 46, 32];
-?>
+$cookies = [58, 46, 36, 32];
+
+if (!isset($_SESSION['login']))
+{
+    header("Location:login.php");
+} ?>
 
 <section class="cookies container-fluid">
     <div class="row">
 
-        <?php
-        if (!empty($_SESSION['cart'][46])) {
-            echo 'Quantité de Pecan Nuts cookies : ' . $_SESSION['cart'][46] . '<br>';
+         <?php if (!empty($_SESSION['cart'][36])) {
+            echo 'Quantité de Pecan Nuts cookies : ' . $_SESSION['cart'][36] . '<br>';
         }
-        if (isset($_SESSION['cart'][49])) {
-            echo 'Quantité de Chocolate chips cookies : ' . $_SESSION['cart'][49] . '<br>';
+        if (isset($_SESSION['cart'][46])) {
+            echo 'Quantité de Chocolate chips cookies : ' . $_SESSION['cart'][46] . '<br>';
         }
         if (isset($_SESSION['cart'][58])) {
             echo 'Quantité de Chocolate cookies : ' . $_SESSION['cart'][58] . '<br>';
@@ -21,12 +24,12 @@ $cookies = [58, 49, 46, 32];
         }
         if (empty($_SESSION['cart'])) {
             echo 'Votre panier est vide!';
-        }
-        ?>
+        }?>
 
     </div>
-</section>
-<?php require 'inc/foot.php';
+</section>;}
+
+  require 'inc/foot.php';
 
 
 /*AUTRE SOLUTION DE CREATION DE PANIER
